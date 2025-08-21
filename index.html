@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VetIguana Pro - Veterinaria Especializada</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Página Principal -->
+    <div id="homePage" class="page">
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <div class="logo-icon">🦎</div>
+                        <h1 class="text-3xl font-bold">VetIguana Pro</h1>
+                    </div>
+                    <nav class="flex gap-4">
+                        <button class="btn btn-primary" onclick="showPage('loginPage')">Iniciar Sesión</button>
+                        <button class="btn btn-secondary" onclick="showPage('registerPage')">Registrarse</button>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <main class="container py-4">
+            <div class="text-center mb-8">
+                <h2 class="text-5xl font-bold text-green-800 mb-4">
+                    Cuidado Especializado para tu Iguana
+                </h2>
+                <p class="text-xl text-green-700 mb-8">
+                    Veterinarios expertos en reptiles con más de 15 años de experiencia
+                </p>
+            </div>
+
+            <div class="grid grid-3 gap-6 mb-8">
+                <div class="card feature-card">
+                    <div class="feature-icon">📅</div>
+                    <h3 class="text-xl font-bold text-green-800 mb-2">Citas Fáciles</h3>
+                    <p class="text-green-600">Agenda tu cita online y gestiona todas tus visitas desde un solo lugar</p>
+                </div>
+                <div class="card feature-card">
+                    <div class="feature-icon">👤</div>
+                    <h3 class="text-xl font-bold text-green-800 mb-2">Perfil Personalizado</h3>
+                    <p class="text-green-600">Mantén toda la información de tu iguana organizada y accesible</p>
+                </div>
+                <div class="card feature-card">
+                    <div class="feature-icon">✅</div>
+                    <h3 class="text-xl font-bold text-green-800 mb-2">Atención Experta</h3>
+                    <p class="text-green-600">Especialistas certificados en medicina de reptiles</p>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button class="btn btn-primary btn-lg" onclick="showPage('registerPage')">
+                    Comenzar Ahora
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Página de Login -->
+    <div id="loginPage" class="page hidden">
+        <div class="auth-container">
+            <div class="auth-card">
+                <h2 class="text-2xl font-bold text-green-800 text-center mb-6">Iniciar Sesión</h2>
+                
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-input" id="loginEmail" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Contraseña</label>
+                        <input type="password" class="form-input" id="loginPassword" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary w-full mb-4">
+                        Iniciar Sesión
+                    </button>
+                </form>
+                
+                <div class="text-center">
+                    <button onclick="showPage('registerPage')" class="text-green-600">
+                        ¿No tienes cuenta? Regístrate
+                    </button>
+                    <br>
+                    <button onclick="showPage('homePage')" class="text-gray-600 mt-4">
+                        Volver al inicio
+                    </button>
+                </div>
+
+                <div class="mt-4 p-4 bg-green-50 rounded-lg text-sm">
+                    <strong>Datos de prueba:</strong><br>
+                    Email: ana@email.com<br>
+                    Contraseña: 123
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Página de Registro -->
+    <div id="registerPage" class="page hidden">
+        <div class="auth-container">
+            <div class="auth-card">
+                <h2 class="text-2xl font-bold text-green-800 text-center mb-6">Registro</h2>
+                
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label class="form-label">Nombre Completo</label>
+                        <input type="text" class="form-input" id="registerName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-input" id="registerEmail" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Contraseña</label>
+                        <input type="password" class="form-input" id="registerPassword" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Teléfono</label>
+                        <input type="tel" class="form-input" id="registerPhone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Nombre de tu Iguana</label>
+                        <input type="text" class="form-input" id="registerIguanaName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Edad de tu Iguana</label>
+                        <input type="text" class="form-input" id="registerIguanaAge" placeholder="ej: 2 años" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary w-full mb-4">
+                        Registrarse
+                    </button>
+                </form>
+                
+                <div class="text-center">
+                    <button onclick="showPage('loginPage')" class="text-green-600">
+                        ¿Ya tienes cuenta? Inicia sesión
+                    </button>
+                    <br>
+                    <button onclick="showPage('homePage')" class="text-gray-600 mt-4">
+                        Volver al inicio
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboardPage" class="page hidden">
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <h1 class="text-2xl font-bold">VetIguana Pro - Dashboard</h1>
+                    <div class="flex gap-4">
+                        <span id="userGreeting">Hola, Usuario</span>
+                        <button class="btn btn-primary" onclick="logout()">Cerrar Sesión</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <nav class="nav">
+            <div class="container">
+                <div class="nav-links">
+                    <div class="nav-link active" data-view="appointments" onclick="showDashboardView('appointments')">Mis Citas</div>
+                    <div class="nav-link" data-view="calendar" onclick="showDashboardView('calendar')">Calendario</div>
+                    <div class="nav-link" data-view="profile" onclick="showDashboardView('profile')">Mi Perfil</div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="container py-4">
+            <!-- Vista de Citas -->
+            <div id="appointmentsView" class="dashboard-view">
+                <div class="card p-6 mb-6">
+                    <h2 class="text-2xl font-bold text-green-800 mb-6">Agendar Nueva Cita</h2>
+                    
+                    <form id="appointmentForm" class="grid grid-2 gap-4">
+                        <div class="form-group">
+                            <label class="form-label">Fecha</label>
+                            <input type="date" class="form-input" id="appointmentDate" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Hora</label>
+                            <select class="form-select" id="appointmentTime" required>
+                                <option value="">Selecciona una hora</option>
+                                <option value="09:00">09:00 AM</option>
+                                <option value="10:00">10:00 AM</option>
+                                <option value="11:00">11:00 AM</option>
+                                <option value="12:00">12:00 PM</option>
+                                <option value="14:00">02:00 PM</option>
+                                <option value="15:00">03:00 PM</option>
+                                <option value="16:00">04:00 PM</option>
+                                <option value="17:00">05:00 PM</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group" style="grid-column: 1 / -1;">
+                            <label class="form-label">Motivo de la Consulta</label>
+                            <select class="form-select" id="appointmentReason" required>
+                                <option value="">Selecciona el motivo</option>
+                                <option value="Chequeo general">Chequeo general</option>
+                                <option value="Problemas de piel">Problemas de piel</option>
+                                <option value="Problemas digestivos">Problemas digestivos</option>
+                                <option value="Lesiones">Lesiones</option>
+                                <option value="Cambios de comportamiento">Cambios de comportamiento</option>
+                                <option value="Vacunación">Vacunación</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group" style="grid-column: 1 / -1;">
+                            <label class="form-label">Notas Adicionales</label>
+                            <textarea class="form-textarea" id="appointmentNotes" placeholder="Describe cualquier síntoma o comportamiento específico..."></textarea>
+                        </div>
+                        
+                        <div style="grid-column: 1 / -1;">
+                            <button type="submit" class="btn btn-primary w-full py-3">
+                                ➕ Agendar Cita
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="card p-6">
+                    <h2 class="text-2xl font-bold text-green-800 mb-6">Mis Citas</h2>
+                    <div id="appointmentList">
+                        <!-- Las citas se cargarán aquí -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vista de Calendario -->
+            <div id="calendarView" class="dashboard-view hidden">
+                <div class="calendar">
+                    <h2 class="text-2xl font-bold text-green-800 mb-6" id="calendarTitle">Calendario</h2>
+                    
+                    <div class="calendar-header">
+                        <div class="calendar-day-header">Dom</div>
+                        <div class="calendar-day-header">Lun</div>
+                        <div class="calendar-day-header">Mar</div>
+                        <div class="calendar-day-header">Mié</div>
+                        <div class="calendar-day-header">Jue</div>
+                        <div class="calendar-day-header">Vie</div>
+                        <div class="calendar-day-header">Sáb</div>
+                    </div>
+                    
+                    <div class="calendar-grid" id="calendarGrid">
+                        <!-- Los días se cargarán aquí -->
+                    </div>
+                    
+                    <div class="mt-6 p-4 bg-green-50 rounded-lg">
+                        <h3 class="font-bold text-green-800 mb-2">Leyenda:</h3>
+                        <div class="flex gap-4">
+                            <div class="flex gap-2">
+                                <div style="width:16px;height:16px;background:#dcfce7;border:1px solid #16a34a;border-radius:4px;"></div>
+                                <span class="text-sm">Día actual</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <div style="width:16px;height:16px;background:#bbf7d0;border-radius:4px;"></div>
+                                <span class="text-sm">Citas programadas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vista de Perfil -->
+            <div id="profileView" class="dashboard-view hidden">
+                <div class="card p-6">
+                    <h2 class="text-2xl font-bold text-green-800 mb-6">Mi Perfil</h2>
+                    
+                    <div class="grid grid-2 gap-6">
+                        <div>
+                            <h3 class="text-lg font-bold text-green-700 mb-4">Información Personal</h3>
+                            <div class="space-y-3">
+                                <div>
+                                    <label class="text-sm font-medium text-gray-600">Nombre</label>
+                                    <p class="text-lg text-gray-800" id="profileName">-</p>
+                                </div>
+                                <div>
+                                    <label class="text-sm font-medium text-gray-600">Email</label>
+                                    <p class="text-lg text-gray-800" id="profileEmail">-</p>
+                                </div>
+                                <div>
+                                    <label class="text-sm font-medium text-gray-600">Teléfono</label>
+                                    <p class="text-lg text-gray-800" id="profilePhone">-</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-lg font-bold text-green-700 mb-4">Información de la Iguana</h3>
+                            <div class="space-y-3">
+                                <div>
+                                    <label class="text-sm font-medium text-gray-600">Nombre de la Iguana</label>
+                                    <p class="text-lg text-gray-800" id="profileIguanaName">-</p>
+                                </div>
+                                <div>
+                                    <label class="text-sm font-medium text-gray-600">Edad</label>
+                                    <p class="text-lg text-gray-800" id="profileIguanaAge">-</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 p-4 bg-green-50 rounded-lg">
+                        <h3 class="text-lg font-bold text-green-700 mb-2">Estadísticas</h3>
+                        <div class="grid" style="grid-template-columns: repeat(4, 1fr); gap: 1rem;">
+                            <div class="text-center">
+                                <p class="text-2xl font-bold text-green-600" id="totalAppointments">0</p>
+                                <p class="text-sm text-gray-600">Total de Citas</p>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-2xl font-bold text-green-600" id="activeAppointments">0</p>
+                                <p class="text-sm text-gray-600">Citas Activas</p>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-2xl font-bold" style="color: #eab308;" id="cancelledAppointments">0</p>
+                                <p class="text-sm text-gray-600">Citas Canceladas</p>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-2xl font-bold" style="color: #3b82f6;" id="upcomingAppointments">0</p>
+                                <p class="text-sm text-gray-600">Próximas Citas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>
